@@ -1,6 +1,6 @@
 // Service worker
 const version = "1";
-const cacheName = "cp-v:" + version;
+const cacheName = "cg-v:" + version;
 const appShellFiles = [
 	"./src/images/delete.png",
     "./src/images/play.png",
@@ -32,10 +32,10 @@ self.addEventListener("install", (e) => {
 	};
 	
     e.waitUntil(
-        /* caches.open(cacheName).then((cache) => {
+        caches.open(cacheName).then((cache) => {
             return cache.addAll(appShellFiles);
-        }) */
-        caches.open(cacheName).then(addFiles) 
+        })
+        //caches.open(cacheName).then(addFiles) 
     )
 });
 
