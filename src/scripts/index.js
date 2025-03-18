@@ -372,15 +372,24 @@ class Game {
 	static keyUp (event) {
 		let key = event.key;
 		
-		if(/[0-9\.\-]/i.test(key) && this.game) 
-			this.game.input(key);
-		else if(/Delete|Backspace/i.test(key) && this.game) 
-			this.game.del();
-		else if(key == "Enter" && this.game) 
-			this.game.next();
-		else if(key == "Space")
+		if(/[0-9\.\-]/i.test(key)) {
+			this.audioPlayer.play('click');
 			if(this.game)
+				this.game.input(key);
+		} 
+		else if(/Delete|Backspace/i.test(key)) {
+			this.audioPlayer.play('click');
+			if(this.game)
+				this.game.del();
+		} 
+		else if(key == "Enter" && this.game) {
+			this.game.next();
+		} 
+		else if(key == " ")
+			if(this.game) {
+				this.audioPlayer.play('click');
 				this.game.stop();
+			} 
 			else {
 				this.game = new Game(this.level, this.range, this.rangeId);
 				this.game.start(true);
