@@ -16,6 +16,7 @@ main {
 	max-width: 480px;
 	color: #fff;
 	background: #222;
+	margin: auto;
 	display: grid;
 	grid-template-rows: auto auto 1fr auto;
 	grid-template-columns: 100%;
