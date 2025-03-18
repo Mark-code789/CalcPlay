@@ -287,7 +287,7 @@ class Game {
 	input (key) {
 		let elem = $(".question");
 		let text = elem.text();
-		console.log(text);
+		
 		if(!text)
 			return;
 		
