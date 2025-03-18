@@ -385,7 +385,8 @@ class Game {
 		else if(key == "Enter" && this.game) {
 			this.game.next();
 		} 
-		else if(key == " ")
+		else if(key == " ") {
+			console.log(this.game);
 			if(this.game) {
 				this.audioPlayer.play('click');
 				this.game.stop();
@@ -394,6 +395,7 @@ class Game {
 				this.game = new Game(this.level, this.range, this.rangeId);
 				this.game.start(true);
 			} 
+		}
 	} 
 	
 	static audioPlayer = {
