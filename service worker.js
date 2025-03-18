@@ -1,6 +1,6 @@
 // Service worker
 const version = "1";
-const cacheName = "cg-v:" + version;
+const cacheName = "cp-v:" + version;
 const appShellFiles = [
 	"./src/images/delete.png",
     "./src/images/play.png",
