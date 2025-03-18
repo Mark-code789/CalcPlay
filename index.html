@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<link rel="icon" href="./src/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./src/images/favicon16.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="./src/images/favicon32.png" type="image/png" sizes="32x32">
+        <link rel="icon" href="./src/images/favicon96.png" type="image/png" sizes="96x96">
+        <link rel="manifest" href="./manifest.webmanifest">
+		<link rel="stylesheet" href="./src/styles/index.css">
+		<script src="./src/scripts/jquery/jquery.min.js"></script>
+		<script src="./src/scripts/sweetalert/sweetalert.min.js"></script>
+		<script src="./src/scripts/updates.js"></script>
+		<script src="./src/scripts/index.js"></script>
+		<title>CaclPlay</title>
+	</head>
+	<body>
+		<main>
+			<header>
+				<img src="./src/images/logo.png">
+				<h1>Calc Play</h1>
+				<button value="mute"></button>
+			</header>
+			<section class="middle">
+				<div>
+					<h2>Points: 0</h2>
+					<h3></h3>
+				</div>
+				<div class="selector">
+					<div class="level">
+						<div>Level</div>
+						<select>
+							<option value=1>Easy</option>
+							<option value=2>Medium</option>
+							<option value=3>Hard</option>
+						</select>
+					</div>
+					<div class="range">
+						<div>Range</div>
+						<select>
+							<option value=10>0-10</option>
+							<option value=20>0-20</option>
+							<option value=50>0-50</option>
+							<option value=100>0-100</option>
+							<option value=500>0-500</option>
+							<option value=1000>0-1000</option>
+						</select>
+					</div>
+				</div>
+				<div class="record">
+					<div class="count">
+						<div>Time left: 00:000</div>
+						<div>Questions: 0</div>
+					</div>
+					<div class="success">
+						<div>0 :Passed</div>
+						<div>0 :Failed</div>
+					</div>
+				</div> 
+			</section>
+			<section class="screen">
+				<div class="question"></div>
+			</section>
+			<section class="buttons">
+				<button value="1">1</button>
+				<button value="2">2</button>
+				<button value="3">3</button>
+				<button value="4">4</button>
+				<button value="5">5</button>
+				<button value="6">6</button>
+				<button value="7">7</button>
+				<button value="8">8</button>
+				<button value="9">9</button>
+				<button value="-">-</button>
+				<button value="0">0</button>
+				<button value=".">.</button>
+				<button value="next" class='disabled'>NEXT</button> 
+				<button value="stop" class='disabled'>A</button>
+				<button value="start">B</button>
+				<button value="delete">C</button>
+			</section>
+			<footer class="install">
+				<img src="./src/images/favicon.png">
+				<div>Install Calculator Game App</div>
+				<button class='install-btn'>Install</button>
+			</footer>
+		</main>
+	</body>
+</html>
