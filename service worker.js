@@ -33,19 +33,19 @@ self.addEventListener("install", (e) => {
 	};
 	
     e.waitUntil(
-        /* caches.open(cacheName).then((cache) => {
+        caches.open(cacheName).then((cache) => {
             return cache.addAll(appShellFiles);
-        }) */
-        caches.open(cacheName).then(addFiles) 
+        }) 
+        // caches.open(cacheName).then(addFiles) 
     )
 });
 
 self.addEventListener("fetch", (e) => {
     e.respondWith(
         caches.match(e.request.url.replace(/Checkers\/$/i, t => t + "index.html"), {cacheName, ignoreSearch: true}).then( async (res) => {
-        	/*if(res && !/(updates.js|\.css.*)$/gi.test(e.request.url)) {
+        	if(res && !/(updates.js|\.css.*)$/gi.test(e.request.url)) {
             	return res;
-            }*/
+            }
             
             return fetch(e.request).then((res2) => {
             	if(res2.status != 200) {
