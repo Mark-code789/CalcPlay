@@ -377,7 +377,7 @@ class Game {
 		
 		if(/[0-9\.\-]/i.test(key)) {
 			this.audioPlayer.play('click');
-			console.log(key);
+			console.log(key, this.gamr);
 			if(this.game)
 				this.game.input(key);
 		} 
