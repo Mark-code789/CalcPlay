@@ -246,7 +246,7 @@ class Game {
 			});
 			
 			if(!start)
-				return;
+				return Game.game = null;
 				
 			let currentRecord = this.records[this.level + "-" + this.range] || "";
 			
