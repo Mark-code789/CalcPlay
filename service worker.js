@@ -18,6 +18,7 @@ const appShellFiles = [
 	"./src/scripts/sweetalert/sweetalert.min.js",
 	"./src/scripts/index.js",
 	"./src/styles/index.css",
+	"./src/styles/index normal.css",
 	"./manifest.webmanifest",
 	"./index.html",
 ];
