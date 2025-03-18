@@ -1,0 +1,220 @@
+html {
+	font-size: 0.75rem;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+* {
+	box-sizing: border-box;
+}
+main {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	max-width: 480px;
+	color: #fff;
+	background: #222;
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+}
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #A6A6A6;
+	gap: 20px;
+	background: #444;
+	padding: 0 20px;
+}
+header img {
+	height: 3em;
+	ratio: 1;
+	object-fit: contain;
+}
+header h1 {
+	width: fit-content;
+	text-align: center;
+}
+header button {
+	margin-left: auto;
+	height: 2em;
+	aspect-ratio: 1;
+	background-color: #000;
+	background-image: url("../images/sound on.png");
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 8px;
+}
+header button.off {
+	background-image: url("../images/sound off.png");
+}
+.middle {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1.5em;
+	padding: 20px;
+	color: #fff;
+}
+.middle h2,
+.middle h3 {
+	text-align: center;
+	margin: 0;
+}
+.middle h3 {
+	color: #C40000;
+}
+.middle h3:empty {
+	display: none;
+}
+.middle .selector {
+	display: flex;
+	justify-content: center;
+	gap: 5em;
+}
+.middle .selector > div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 8px;
+}
+.middle .selector > div > div {
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+}
+.middle .selector > div select {
+	padding: 5px;
+	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+}
+.middle .selector > div select:focus {
+	outline: 2px solid #888;
+}
+.middle .record {
+	display: flex;
+	justify-content: space-between;
+}
+.middle .record > div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+.middle .record .success {
+	text-align: right;
+}
+.screen {
+	display: flex;
+	align-items: center;
+	background: #000;
+}
+.screen .question {
+	width: 100%;
+	font-size: 3.5em;
+	text-align: center;
+	color: #fff;
+}
+.screen .question:empty::before {
+	content: "a + b = ?";
+	color: #737373;
+}
+.buttons {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-auto-rows: auto;
+	gap: 0.5em;
+	background: #000;
+	padding: 0.5em;
+}
+.buttons button {
+	padding: 0.25em;
+	background: #222;
+	border: none;
+	color: #fff;
+	font-size: 1.8em;
+}
+.buttons button:focus {
+	outline: 2px solid #444;
+}
+.buttons button[value="next"] {
+	grid-column: 1 / 4;
+	background: #149200;
+}
+.buttons button[value="next"]:focus {
+	outline: 2px solid #21ED00;
+}
+.buttons button[value="start"],
+.buttons button[value="stop"],
+.buttons button[value="delete"] {
+	color: #0000;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.buttons button[value="start"] {
+	background-size: 0.5em;
+	background-image: url("../images/play.png");
+}
+.buttons button[value="stop"] {
+	background-size: 0.6em;
+	background-color: #C40000;
+	background-image: url("../images/stop.png");
+}
+.buttons button[value="stop"]:focus {
+	outline: 2px solid #C47878;
+}
+.buttons button[value="delete"] {
+	background-size: 1em;
+	background-image: url("../images/delete.png");
+}
+.install {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	translate: -50% calc(-100% - 20px);
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 0.8em;
+	border-radius: 4px;
+	padding: 20px;
+	background: #111;
+	font-size: 1em;
+	transition: translate 0.7s ease-out;
+}
+.install.show_install_prompt {
+	translate: -50% 20px;
+}
+.install img {
+	height: 35px;
+	ratio: 1;
+	object-fit: contain;
+}
+.install div {
+	white-space: nowrap;
+}
+.install button {
+	padding: 6px 20px;
+	border-radius: 4px;
+	color: #fff;
+	background: #149200;
+	font-weight: bold;
+	border: none;
+}
+.install button:focus {
+	outline: 2px solid #21ED00;
+}
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.swal-content {
+	color: #000000A3;
+}
+.swal-content li {
+	text-align: left;
+}
