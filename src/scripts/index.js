@@ -423,18 +423,20 @@ class Game {
 			this.audioPlayer.pop.play();
 		}, 
 		play: (type) => {
-			if(this.audioPlayer.audio) 
-				this.audioPlayer.audio.pause();
+			try {
+				if(this.audioPlayer.audio) 
+					this.audioPlayer.audio.pause();
+					
+				this.audioPlayer.audio = this.audioPlayer[type];
 				
-			this.audioPlayer.audio = this.audioPlayer[type];
-			
-			if(!this.audioPlayer.audio) 
-				return this.audioPlayer.init();
-				
-			this.audioPlayer.audio.muted = this.audioPlayer.muted;
-			this.audioPlayer.audio.currentTime = 0;
-			this.audioPlayer.audio.volume = 1;
-			this.audioPlayer.audio.play();
+				if(!this.audioPlayer.audio) 
+					return this.audioPlayer.init();
+					
+				this.audioPlayer.audio.muted = this.audioPlayer.muted;
+				this.audioPlayer.audio.currentTime = 0;
+				this.audioPlayer.audio.volume = 1;
+				this.audioPlayer.audio.play();
+			} catch () {}
 		}, 
 	}  
 }
