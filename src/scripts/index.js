@@ -374,6 +374,8 @@ class Game {
 		
 		if(/[0-9\.\-]/i.test(key) && this.game) 
 			this.game.input(key);
+		else if(/Delete|Backspace/i.test(key) && this.game) 
+			this.game.del();
 		else if(key == "Enter" && this.game) 
 			this.game.next();
 		else if(key == "Space")
