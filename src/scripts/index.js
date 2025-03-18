@@ -246,7 +246,7 @@ class Game {
 			});
 			
 			if(!start)
-				return Game.game = null;
+				return false;
 				
 			let currentRecord = this.records[this.level + "-" + this.range] || "";
 			
@@ -265,8 +265,10 @@ class Game {
 		
 		this.generateQuestion();
 		let stopped = await this.timer.start();
-		if(!stopped) 
-			return this.next();
+		if(!stopped) {
+			this.next();
+			return true;
+		} 
 			
 		let currentRecord = this.records[this.level + "-" + this.range] || 0;
 		let newRecord = Math.max(currentRecord, this.points);
@@ -285,7 +287,7 @@ class Game {
 	input (key) {
 		let elem = $(".question");
 		let text = elem.text();
-		
+		console.log(text);
 		if(!text)
 			return;
 		
@@ -333,7 +335,8 @@ class Game {
 		switch (value) {
 			case "start":
 				this.game = new Game(this.level, this.range, this.rangeId);
-				this.game.start(true);
+				if(!this.game.start(true));
+					this.game = null;
 				break;
 				
 			case "stop":
@@ -374,6 +377,7 @@ class Game {
 		
 		if(/[0-9\.\-]/i.test(key)) {
 			this.audioPlayer.play('click');
+			console.log(key);
 			if(this.game)
 				this.game.input(key);
 		} 
@@ -385,17 +389,17 @@ class Game {
 		else if(key == "Enter" && this.game) {
 			this.game.next();
 		} 
-		else if(key == " ") {
-			console.log(this.game);
+		else if(key == " ")
 			if(this.game) {
 				this.audioPlayer.play('click');
 				this.game.stop();
+				this.game = null;
 			} 
 			else {
 				this.game = new Game(this.level, this.range, this.rangeId);
-				this.game.start(true);
+				if(!this.game.start(true));
+					this.game = null;
 			} 
-		}
 	} 
 	
 	static audioPlayer = {
