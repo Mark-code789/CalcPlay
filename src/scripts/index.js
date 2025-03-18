@@ -335,8 +335,8 @@ class Game {
 		switch (value) {
 			case "start":
 				this.game = new Game(this.level, this.range, this.rangeId);
-				if(!this.game.start(true));
-					this.game = null;
+				let started = this.game.start(true);
+				this.game = started? null: this.game;
 				break;
 				
 			case "stop":
