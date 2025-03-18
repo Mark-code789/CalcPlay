@@ -436,7 +436,7 @@ class Game {
 				this.audioPlayer.audio.currentTime = 0;
 				this.audioPlayer.audio.volume = 1;
 				this.audioPlayer.audio.play();
-			} catch () {}
+			} catch (error) {}
 		}, 
 	}  
 }
