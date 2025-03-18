@@ -398,7 +398,7 @@ class Game {
 			else {
 				this.game = new Game(this.level, this.range, this.rangeId);
 				let started = this.game.start(true);
-				this.game = started? null: this.game;
+				this.game = started? this.game: null;
 			} 
 	} 
 	
